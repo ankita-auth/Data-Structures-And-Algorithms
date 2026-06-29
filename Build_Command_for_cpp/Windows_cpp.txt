@@ -5,53 +5,45 @@ To change default terminal : Hit clt+shift+p->write:default terminal->change it 
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Compile and run",
+      "label": "Compile and Run",
       "type": "shell",
-      "command": "",
+      "command": "cmd",
       "args": [
+        "/c",
         "copy",
         "\"${file}\"",
-        "${workspaceFolder}\\jspwTest.cpp",
+        "jspwTest.cpp",
         "&&",
         "g++",
         "jspwTest.cpp",
         "-o",
-        "jspwTest",
+        "jspwTest.exe",
         "&&",
-        "jspwTest",
+        "jspwTest.exe",
         "<",
         "input.txt",
         ">",
         "output.txt",
         "&&",
         "del",
-        "jspwTest.exe",
+        "jspwTest.cpp",
         "&&",
         "del",
-        "jspwTest.cpp"
+        "jspwTest.exe"
       ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
       "presentation": {
         "reveal": "never"
       },
       "group": {
         "kind": "build",
-        "isDefault": true,
+        "isDefault": true
       },
-      "problemMatcher": {
-        "owner": "cpp",
-        "fileLocation": [
-          "relative",
-          "${workspaceRoot}"
-        ],
-        "pattern": {
-          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-          "file": 1,
-          "line": 2,
-          "column": 3,
-          "severity": 4,
-          "message": 5
-        }
-      }
+      "problemMatcher": [
+        "$gcc"
+      ]
     }
   ]
 }

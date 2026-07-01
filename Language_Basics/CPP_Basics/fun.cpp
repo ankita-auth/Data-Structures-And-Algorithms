@@ -19,15 +19,71 @@ using namespace std;
 //     return 0;
 // }
 
-void inputTwoNumAndPrintAddOfThem(){
-    int num1,num2;
-    cin>>num1>>num2;
-    cout<<num1+num2<<endl;
+// void inputTwoNumAndPrintAddOfThem(){
+//     int num1,num2;
+//     cin>>num1>>num2;
+//     cout<<num1+num2<<endl;
 
+// }
+// int main(){
+//     inputTwoNumAndPrintAddOfThem();
+//     inputTwoNumAndPrintAddOfThem();
+//     return 0;
+
+// }
+
+// ----------------------X-------------------------
+// int sumOfTwoNumbers(int num1,int num2){
+//     int res=num1+num2;
+//     return res;
+// }
+// int main(){
+//     cout<<sumOfTwoNumbers(4,5);
+//     return 0;
+// }
+// --------------------------x-----------------------------
+
+// void explainPassByValueAndReference(int x){
+//     x=x+10;
+// }
+// int main(){
+//     int num=5;
+//     explainPassByValueAndReference(num);
+//     cout<<num;
+//     return 0;
+
+// }
+//-------------------------------------X---------------------------------
+// void explainPassByValueAndReference(int &x){
+//     x=x+10;
+// }
+// int main(){
+//     int num=5;
+//     explainPassByValueAndReference(num);
+//     cout<<num;
+//     return 0;
+
+// }
+
+//-----------------------------------------------X-----------------------------------------
+// void explainPassByValueAndReference(int arr[]){
+//     arr[0]=100;
+// }
+// int main(){
+//     int arr[]={6,7,8,1,2};
+//     explainPassByValueAndReference(arr);
+//     cout<<arr[0];
+//     return 0;
+
+// }
+//------------------------------------------------------X-----------------------
+void explainPassByValueAndReference(int *arr){
+    arr[0]=100;
 }
 int main(){
-    inputTwoNumAndPrintAddOfThem();
-    inputTwoNumAndPrintAddOfThem();
+    int arr[]={6,7,8,1,2};
+    explainPassByValueAndReference(arr);
+    cout<<arr[0];
     return 0;
 
 }

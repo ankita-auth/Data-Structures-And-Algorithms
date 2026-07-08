@@ -34,8 +34,8 @@ class data_type {
         // char ch = 'a';
         // System.out.println(ch);
 
-        boolean fl = true;
-        System.out.println(fl);
+        // boolean fl = true;
+        // System.out.println(fl);
 
     }
 

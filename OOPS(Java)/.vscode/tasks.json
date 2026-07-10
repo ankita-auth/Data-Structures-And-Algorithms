@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and Run Java",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "javac \"${file}\" && java -cp \"${fileDirname}\" ${fileBasenameNoExtension} < \"${fileDirname}\\input.txt\" > \"${fileDirname}\\output.txt\" && del \"${fileDirname}\\${fileBasenameNoExtension}.class\""
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

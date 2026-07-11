@@ -60,16 +60,54 @@
 //---------------------X-------------------------------
 
 
+// class BankAccount{
+//     double balance;
+//     String accountType;
+//     public BankAccount(double _balance){
+//         balance=_balance;
+//         accountType="Savings";
+//     }
+//     public BankAccount(double _balance,String _accountType){
+//         balance=_balance;
+//         accountType=_accountType;
+//     }
+//     public void printBalance(){
+//         System.out.println(balance);
+//     }
+//      public void printAccountType(){
+//         System.out.println(accountType);
+//     }
+// }
+
+// class Constructor1{
+//     public static void main(String[] args) {
+//         BankAccount t1=new BankAccount(100);
+//         t1.printBalance();
+//         t1.printAccountType();
+
+//         BankAccount t2=new BankAccount(200,"Current");
+//         t2.printBalance();
+//         t2.printAccountType();
+
+
+//     }
+// }
+
+
+//---------------------X-------------------------------
+
+
+
 class BankAccount{
     double balance;
     String accountType;
     public BankAccount(double _balance){
-        balance=_balance;
-        accountType="Savings";
+        this.balance=_balance;
+        this.accountType="Savings";
     }
     public BankAccount(double _balance,String _accountType){
-        balance=_balance;
-        accountType=_accountType;
+        this.balance=_balance;
+        this.accountType=_accountType;
     }
     public void printBalance(){
         System.out.println(balance);

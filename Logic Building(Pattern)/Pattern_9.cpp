@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution{
     public:
-       void pattern8(int n){
+       void pattern9(int n){
          for(int i=1;i<=n;i++){
                 for(int j=1;j<=n-i;j++){
                     cout<<" ";
@@ -33,7 +33,7 @@ int main(){
     Solution s;
     int n;
     cin>>n;
-    s.pattern8(n);
+    s.pattern9(n);
     return 0;
 }
 

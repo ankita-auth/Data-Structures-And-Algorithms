@@ -105,3 +105,6 @@ int main(){
 //     s.patterns20(n);
 //     return 0;
 // }
+
+//T.C:O(n^2)
+//S.C:O(1)

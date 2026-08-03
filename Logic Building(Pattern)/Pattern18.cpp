@@ -27,3 +27,6 @@ int main(){
     s.pattern18(N);
     return 0;
 }
+
+//T.C:O(n^2)
+//S.C:O(1)

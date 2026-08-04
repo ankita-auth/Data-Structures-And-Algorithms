@@ -17,7 +17,7 @@ void explainVector(){
     // }
     // cout<<endl;
 
-   
+    //-------------------X-------------------
     //* iterator
     //[1,2,3]
     // vector<int>::iterator beginitr=vec.begin();
@@ -31,16 +31,79 @@ void explainVector(){
     //     cout<<*i<<" ";
     // }
 
+    //----------------------X------------------------
     //* auto
-    auto beginitr=vec.begin();
-    auto enditr=vec.end();
-    // for(auto i=beginitr;i<enditr;i++){
-    //     cout<<*i<<" ";
-    // }
+    // auto beginitr=vec.begin();
+    // auto enditr=vec.end();
+    // // for(auto i=beginitr;i<enditr;i++){
+    // //     cout<<*i<<" ";
+    // // }
  
-    for(auto i:vec){
+    // for(auto i:vec){
+    //     cout<<i<<" ";
+    // }
+
+
+
+    //--------------------X----------------------
+    //* Reverser Iterator
+    // auto reverseBegin=vec.rbegin();//points to actually last element
+    // auto reverseEnd=vec.rend();//points to actually one before first elelment
+    // for(auto i=reverseBegin;i<reverseEnd;i++){
+    //     cout<<*i<<" ";
+    // } //5 0 2 1
+
+
+    vector<int> v(5,8);
+    // vector<int> v={7,8};
+    //vector<int> v(5);
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(0);
+    v.emplace_back(5);
+    for(auto i:v){
         cout<<i<<" ";
     }
+    //8 8 8 8 8 1 2 0 5 
+    //7 8 1 2 0 5
+    //0 0 0 0 0 1 2 0 5
+
+    cout<<"\n";
+
+    //----------------------------X---------------------
+    //* Copy Constructor
+    // vector<int> dupvec(v);
+    // for(auto i:dupvec){
+    //     cout<<i<<" ";
+    // }
+
+    // vector<int> dupvec(v.begin()+1,v.end()-1);
+    // for(auto i:dupvec){
+    //     cout<<i<<" ";
+    // }
+
+    //---------------------X--------------------------
+
+    // cout<<v.front()<<" ";//prints first element
+    // cout<<v.back()<<" ";//prints last element
+    // v.pop_back();
+    // cout<<v.back();
+
+    //---------------------X--------------------------
+    //v.erase(v.begin()+2);//deletes 3rd element in vector v
+    //v.erase(v.begin()+1,v.end()-1);//deletes from 3rd element to last in vector v
+
+    //-----------------------X------------------
+    //* clear
+    // v.clear();
+    // for(auto i:v){
+    //     cout<<i<<" ";
+    // }
+
+    //-----------------------X------------------
+    //* access element
+    cout<<v.at(6); //2
+
    
 }
  

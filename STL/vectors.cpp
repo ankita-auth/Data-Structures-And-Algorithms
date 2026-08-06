@@ -3,11 +3,11 @@ using namespace std;
  
 void explainVector(){
     //int arr[5]; //* can't change size
-    vector<int> vec;
-    vec.push_back(1);
-    vec.push_back(2);
-    vec.push_back(0);
-    vec.emplace_back(5);
+    // vector<int> vec;
+    // vec.push_back(1);
+    // vec.push_back(2);
+    // vec.push_back(0);
+    // vec.emplace_back(5);
 
     // cout<<vec.size()<<endl; //3
 
@@ -54,21 +54,21 @@ void explainVector(){
     // } //5 0 2 1
 
 
-    vector<int> v(5,8);
+    // vector<int> v(5,8);
     // vector<int> v={7,8};
     //vector<int> v(5);
-    v.push_back(1);
-    v.push_back(2);
-    v.push_back(0);
-    v.emplace_back(5);
-    for(auto i:v){
-        cout<<i<<" ";
-    }
+    // v.push_back(1);
+    // v.push_back(2);
+    // v.push_back(0);
+    // v.emplace_back(5);
+    // for(auto i:v){
+    //     cout<<i<<" ";
+    // }
     //8 8 8 8 8 1 2 0 5 
     //7 8 1 2 0 5
     //0 0 0 0 0 1 2 0 5
 
-    cout<<"\n";
+    // cout<<"\n";
 
     //----------------------------X---------------------
     //* Copy Constructor
@@ -102,7 +102,26 @@ void explainVector(){
 
     //-----------------------X------------------
     //* access element
-    cout<<v.at(6); //2
+    // cout<<v[6]<<endl;
+    // cout<<v.at(6); //2
+    //---------------------------X------------------------------------
+    //* Swap
+    // vector<int> v1={2,8};
+    // vector<int> v2={6,4};
+    // swap(v1,v2);
+    // for(auto i:v1){
+    //     cout<<i<<" ";
+    // }
+
+    //* Insert
+    vector<int> vec={7,8,8,6,7};
+    vec.insert(vec.begin()+2,4);
+    for(auto i:vec){
+        cout<<i<<" ";
+    }
+
+
+
 
    
 }

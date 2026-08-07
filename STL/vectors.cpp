@@ -3,11 +3,11 @@ using namespace std;
  
 void explainVector(){
     //int arr[5]; //* can't change size
-    // vector<int> vec;
-    // vec.push_back(1);
-    // vec.push_back(2);
-    // vec.push_back(0);
-    // vec.emplace_back(5);
+    vector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(0);
+    vec.emplace_back(5);
 
     // cout<<vec.size()<<endl; //3
 
@@ -89,6 +89,8 @@ void explainVector(){
     // v.pop_back();
     // cout<<v.back();
 
+
+    auto it=vec.end()-1;//* Possible
     //---------------------X--------------------------
     //v.erase(v.begin()+2);//deletes 3rd element in vector v
     //v.erase(v.begin()+1,v.end()-1);//deletes from 3rd element to last in vector v

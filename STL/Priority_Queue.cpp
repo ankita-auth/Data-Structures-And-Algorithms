@@ -3,6 +3,8 @@ using namespace std;
 void explainPQ(){
     //* Stores the highest elemnt at the top [Max Heap]
 
+
+
     // priority_queue<int>pq;
     // pq.push(5);
     // pq.push(2);
@@ -16,7 +18,6 @@ void explainPQ(){
     //     cout<<pq.top()<<" ";
     //     pq.pop();
     //     cout<<endl;
-
     // }
     
     //* Stores the highest elemnt at the top [Min Heap]
@@ -35,17 +36,8 @@ void explainPQ(){
         cout<<endl;
 
     }
-
-
-
-
-
-
-
-    
-
 }
-int main(){
+int main(){ 
 
     explainPQ();
     return 0;

@@ -11,6 +11,8 @@ void explainList(){
     cout<<endl;
     cout<<ls.front();
 
+    //auto it=ls.end()-1;//* Not Possible
+
 }
 int main(){
 

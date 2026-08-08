@@ -3,7 +3,7 @@ using namespace std;
 void explainList(){
 
     list<int> ls={6,7};
-    ls.push_front(1);
+    ls.push_front(1);//* vector has push back instead of push front
     ls.emplace_front(2);
     for(auto it:ls){
         cout<<it<<" ";

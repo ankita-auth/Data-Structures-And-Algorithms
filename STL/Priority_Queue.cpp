@@ -20,7 +20,7 @@ void explainPQ(){
     //     cout<<endl;
     // }
     
-    //* Stores the highest elemnt at the top [Min Heap]
+    //* Stores the mnimum element at the top [Min Heap]
     priority_queue<int, vector<int>, greater<int>>pq1;
     // priority_queue<char, vector<char>, greater<char>>pq1;
     pq1.push(5);

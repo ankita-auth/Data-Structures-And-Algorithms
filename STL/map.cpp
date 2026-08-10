@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 void explainMap(){
-    //* Prints in ascendiing order of key
+    //*(Unique Keys) Prints in ascendiing order of key
+    //* Map are not consecutive as they are sorted on basis of keys
     map<int,string> mpp;
     mpp.insert({4,"Raj"});
     mpp[1]="abc";

@@ -3,14 +3,18 @@ using namespace std;
 
 class Solution{
     public: 
-        int reverseNumber(int n){
-            int rev = 0;
+        int largest_digit(int n){
+            int max = 0;
+            
             while(n > 0){
-                int lastD = n%10;
-                rev = rev * 10 + lastD;
+                int d=n%10;
+                if(max<d){
+                    max=d;
+                }
                 n/=10;
+             
             }
-            return rev;
+            return max;
         }
 };
 
@@ -18,15 +22,10 @@ int main(){
     int n;
     cin >> n;
     Solution s;
-    cout << s.reverseNumber(n);
+    cout << s.largest_digit(n);
     return 0;
 }
 
 //T.C: O(log10num)
 //S.C: O(1)
 
-
-
-//*NOTE:
-/*to_string: int to str
-stoi: str to int*/

@@ -3,14 +3,15 @@ using namespace std;
 
 class Solution{
     public: 
-        int reverseNumber(int n){
+        bool pallindrome(int n){
+            int num=n;
             int rev = 0;
             while(n > 0){
                 int lastD = n%10;
                 rev = rev * 10 + lastD;
                 n/=10;
             }
-            return rev;
+            return num==rev;
         }
 };
 
@@ -18,7 +19,7 @@ int main(){
     int n;
     cin >> n;
     Solution s;
-    cout << s.reverseNumber(n);
+    cout << s.pallindrome(n);
     return 0;
 }
 
@@ -26,7 +27,3 @@ int main(){
 //S.C: O(1)
 
 
-
-//*NOTE:
-/*to_string: int to str
-stoi: str to int*/

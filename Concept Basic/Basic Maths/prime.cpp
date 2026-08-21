@@ -13,7 +13,7 @@ class Solution{
                    
                 }
             }
-            return true;;
+            return true;
         }
 };
 
@@ -25,6 +25,6 @@ int main(){
     return 0;
 }
 
-//T.C: O(n)
+//T.C: O(SQRT(n))
 //S.C: O(1)
 

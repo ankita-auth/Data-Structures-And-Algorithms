@@ -2,6 +2,8 @@
 using namespace std;
 void explainSet(){
 
+      //*Sets are non contgious(so we can't access particular element using s[i])
+ 
     // set<int>st;
     // st.insert(2);
     // st.insert(21);

@@ -15,6 +15,11 @@ void explainMultiMap(){
     //     cout<<it.first<<"->"<<it.second<<endl;
     // }
 
+    //*Returns the first occurence
+    auto it = mpp.find(1);
+    cout << (*it).first << "->"<< (*it).second;
+    
+
     //* Here i.second act as i.end()
     auto i=mpp.equal_range(2);
     for(auto j=i.first;j!=i.second;j++){//* Map are not consecutive as they are sorted on basis of keys thats why "<" is not used here in place of "!="

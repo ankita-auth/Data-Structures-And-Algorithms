@@ -1,3 +1,18 @@
+/* Given an integer n. 
+You need to recreate the pattern given below for any value of N. Let's say for N = 5, the pattern should look like as below:
+
+*
+
+**
+
+*
+
+**
+
+***
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 class Solution{
@@ -43,6 +58,10 @@ int main(){
 //     Solution::pattern2(N);
 //     return 0;
 // }
+
+
+    //*Note:
+    //If we are using static then we need to use ::(scope resolution) to call the function without object
 
 //T.C:O(n^2)
 //S.C:O(1)  

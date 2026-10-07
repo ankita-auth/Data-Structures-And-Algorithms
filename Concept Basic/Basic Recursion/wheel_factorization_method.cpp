@@ -31,3 +31,5 @@ int main(){
     else cout<<"False";
     return 0;
 }
+//*T.C:O(srqt(n))
+//*S.C:O(1)

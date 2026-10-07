@@ -1,3 +1,21 @@
+/*
+Given an array nums, find the sum of elements of array using recursion.
+
+Example 1:
+Input : nums = [1, 2, 3]
+
+Output : 6
+
+Explanation : The sum of elements of array is 1 + 2 + 3 => 6.
+
+Example 2:
+Input : nums = [5, 8, 1]
+
+Output : 14
+
+Explanation : The sum of elements of array is 5 + 8 + 1 => 14.
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 // class Solution{

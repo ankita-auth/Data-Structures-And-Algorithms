@@ -22,7 +22,7 @@ void explainVector(){
     //[1,2,3]
     // vector<int>::iterator beginitr=vec.begin();
     // cout<<*beginitr<<endl;
-    // //cout<<itr<<endl; //error
+    //cout<<itr<<endl; //error
     // vector<int>::iterator enditr=vec.end();
     // enditr-=1;
     // cout<<*enditr;
@@ -103,7 +103,7 @@ void explainVector(){
     // }
 
     //-----------------------X------------------
-    //* access element
+    //* access element(because it is contigous)
     // cout<<v[6]<<endl;
     // cout<<v.at(6); //2
     //---------------------------X------------------------------------

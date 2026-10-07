@@ -1,4 +1,6 @@
 /*
+//*Question:-
+
 Problem: Print the Day of the Week
  
 Problem Statement:
@@ -66,7 +68,7 @@ Constraints:
  
 //---------------------------x------------------------
  
- 
+//*Solution:-
  
  
 

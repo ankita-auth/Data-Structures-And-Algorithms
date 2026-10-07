@@ -1,3 +1,29 @@
+/*
+Given a string, the task is to reverse it. The string is represented by an array of characters s.
+
+Perform the reversal in place with O(1) extra memory.
+
+Note: no need to return anything, modify the given list.
+
+Example 1:
+Input : s = ["h", "e" ,"l" ,"l" ,"o"]
+
+Output : ["o", "l", "l", "e", "h"]
+
+Explanation :
+
+The given string is s = "hello" and after reversing it becomes s = "olleh".
+
+Example 2:
+Input : s = ["b", "y" ,"e" ]
+
+Output : ["e", "y", "b"]
+
+Explanation :
+
+The given string is s = "bye" and after reversing it becomes s = "eyb".
+*/
+
 // #include <bits/stdc++.h>
 // using namespace std;
 
@@ -27,7 +53,9 @@
 //
 
 //*T.C:O(n)
-//*S.C:O(1)---------------------------X------------------
+//*S.C:O(1)
+//*---------------------------X------------------
+
 //*Brute Force
 // #include <bits/stdc++.h>
 // using namespace std;

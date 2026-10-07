@@ -1,3 +1,40 @@
+/*
+You are given a string s. Return the array of unique characters, sorted by highest to lowest occurring characters.
+
+If two or more characters have same frequency then arrange them in alphabetic order.
+
+Example 1:
+Input : s = "tree"
+
+Output : ['e', 'r', 't' ]
+
+Explanation :
+
+The occurrences of each character are as shown below :
+
+e --> 2
+
+r --> 1
+
+t --> 1.
+
+The r and t have same occurrences , so we arrange them by alphabetic order.
+
+Example 2:
+Input : s = "raaaajj"
+
+Output : ['a' , 'j', 'r' ]
+
+Explanation :
+
+The occurrences of each character are as shown below :
+
+a --> 4
+
+j --> 2
+
+r --> 1
+*/
 
 //*Our Approach
 // #include <bits/stdc++.h>
@@ -44,7 +81,7 @@
  
 // }
 
-//*T.C:O(nlogn)-->worst case, O(nlogk)-->average case (as map takes log k)
+//*T.C:O(nlogn)-->worst case, O(nlogk)-->average case (as map takes log k)(n is due to for loop)
 //*S.C:O(n)
  
 //-----------------------------------X---------------------------------------

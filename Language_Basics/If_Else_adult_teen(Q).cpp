@@ -1,113 +1,99 @@
 /*
-Problem: Check Whether a Person is an Adult or a Teen
- 
+//*Question:-
+
+Problem: Grade Calculator
+
 Problem Statement:
-Given an integer age, determine whether the person is an Adult or a Teen.
- 
+Given the marks of a student, determine and print the corresponding grade.
+
 Print:
-- "Adult" if age >= 18
-- "Teen" if age < 18
- 
+- "Grade A" if marks >= 90
+- "Grade B" if marks >= 70
+- "Grade C" if marks >= 50
+- "Grade D" if marks >= 35
+- "Fail" otherwise
+
 Note:
-- Print the output exactly as "Adult" or "Teen".
-- Do not change the letter casing.
- 
+- Print the output exactly as specified.
+- Do not change the letter casing or spacing.
+
 Input:
-- A single integer age.
- 
+- A single integer marks.
+
 Output:
-- Print "Adult" or "Teen" based on the given condition.
- 
+- Print the appropriate grade based on the given marks.
+
 Examples:
- 
+
 Example 1:
 Input:
-19
- 
+95
+
 Output:
-Adult
- 
+Grade A
+
 Explanation:
-Since 19 >= 18, the person is an Adult.
- 
+Since 95 >= 90, the student receives Grade A.
+
 Example 2:
 Input:
-7
- 
+14
+
 Output:
-Teen
- 
+Fail
+
 Explanation:
-Since 7 < 18, the person is a Teen.
- 
+Since 14 < 35, the student fails.
+
 Example 3:
 Input:
-18
- 
+70
+
 Output:
-Adult
- 
+Grade B
+
 Explanation:
-Since 18 >= 18, the person is an Adult.
- 
+Since 70 >= 70 but < 90, the student receives Grade B.
+
 Constraints:
-0 <= age <= 100
+0 <= marks <= 100
 */
- 
-//-----------------------------X------------------------------------
 
+//----------------------x----------------------------
 
+//*Solution:-
 
-
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 class Solution{
     public:
-        void isAdult(int age){
-            if (age>=18){
-                cout<<"Adult"<<endl;
-            }
-            else{
-                cout<<"Teen"<<endl;
-            }
+      void studentGrade(int marks){
+        if(marks >= 90){
+            cout << "Grade A";
         }
+        else if(marks >= 70){
+            cout << "Grade B";
+        }
+        else if(marks >= 50){
+            cout << "Grade C";
+        }
+        else if(marks >= 35){
+            cout << "Grade D";
+        }
+        else{
+            cout << "Fail";
+        }
+      }
+
 
 };
+
 int main(){
+    int marks;
+    cin >> marks;
     Solution s;
-    int age;
-    cin>>age;
-    s.isAdult(age);
-
-
+    s.studentGrade(marks);
+    
     return 0;
 }
-
-//--------------------------X-------------------------
-// #include<bits/stdc++.h>
-// using namespace std;
- 
-// class Solution{
-//     public:
-//       void check(int age){
-//         cin >> age;
-//         if(age >= 18){
-//             cout <<"Adult" <<endl;
- 
-//         }
-//         else{
-//             cout <<"Teen" << endl;
-//         }
-//       }
- 
-// };
- 
-// int main(){
-//     Solution s;
-//     int age;
-//     s.check(age);
-//     return 0;
- 
-// }
- 

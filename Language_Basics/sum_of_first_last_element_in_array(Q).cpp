@@ -1,4 +1,6 @@
 /*
+//*Question:-
+
 Problem: Sum of the First and Last Element of an Array
  
 Problem Statement:
@@ -60,7 +62,7 @@ Constraints:
 //---------------------------x------------------------
  
  
- 
+//*Solution:-
 
 #include <bits/stdc++.h>
 using namespace std;

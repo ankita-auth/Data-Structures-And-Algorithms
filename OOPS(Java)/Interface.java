@@ -22,7 +22,7 @@ class Dog implements Animal,Pet{
     //@Override
     public void sleep(){
         System.out.println("Dog is sleeping!!!");
-        //super.sleep();
+        //super.sleep();-->Error
     }
     public void ownerName(){
         System.out.println("XYZ");

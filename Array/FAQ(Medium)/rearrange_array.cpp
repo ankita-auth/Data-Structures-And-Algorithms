@@ -23,33 +23,77 @@ Explanation:
 The positive number 1, 2, 3 maintain their relative positions and -1, -3, -4 maintain their relative positions
 */
 
+//*Brute Force
+// #include <bits/stdc++.h>
+// using namespace std;
+// class Solution{
+//     public:
+//         vector<int> rearrangeArray(vector<int>& nums){
+//             int n=nums.size();
+//             vector<int> pos,neg;
+//             for(int i=0;i<n;i++){
+//                 if(nums[i]>=0){
+//                     pos.push_back(nums[i]);
+//                 }
+//                 else{
+//                     pos.push_back(nums[i]);
+//                 }
+//             }
 
+//             for(int i=0;i<n/2;i++){
+//                 nums[2*i]=pos[i];
+//                 nums[2*i+1]=neg[i];
+//             }
+
+//             return nums;
+//         }
+        
+// };
+// int main(){
+//     vector<int> nums;
+//     int x;
+//     while(cin >> x){
+//         nums.push_back(x);
+//     }
+
+//     Solution sol;
+//     for(auto it: sol.rearrangeArray(nums)){
+//         cout << it << " ";
+//     }
+
+//     return 0;
+// }
+
+//*T.C:O(n)+O(n/2)
+//*S.C:O(n/2 + n/2)=O(n)
+
+
+//----------------------------X---------------------------
+
+
+//*Optimal
 #include <bits/stdc++.h>
 using namespace std;
-
-//*Brute
 class Solution{
     public:
         vector<int> rearrangeArray(vector<int>& nums){
             int n=nums.size();
-            vector<int> pos,neg;
-            for(int i=0;i<n;i++){
-                if(nums[i]>=0){
-                    pos.push_back(nums[i]);
+            vector<int> ans(n,0);
+            int pos=0,neg=1;
+            for(int i=0;i<nums.size();i++){
+                if(nums[i]<0){
+                    ans[neg]=nums[i];
+                    neg+=2;
                 }
                 else{
-                    pos.push_back(nums[i]);
+                    ans[pos]=nums[i];
+                    pos+=2;
                 }
-            }
 
-            for(int i=0;i<n/2;i++){
-                nums[2*i]=pos[i];
-                nums[2*i+1]=neg[i];
             }
+            return ans;
 
-            return nums;
         }
-        
 };
 int main(){
     vector<int> nums;
@@ -66,16 +110,5 @@ int main(){
     return 0;
 }
 
-//*T.C:
-//*S.C:
-
-//*Optimal
-// class Solution{
-//     public:
-//         vector<int> rearrangeArray(vector<int>& nums){
-
-//         }
-// };
-
-//*T.C:
-//*S.C:
+//*T.C:O(n)
+//*S.C:O(n)

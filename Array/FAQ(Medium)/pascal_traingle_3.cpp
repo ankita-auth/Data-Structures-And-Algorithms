@@ -50,6 +50,20 @@ Explanation: The Pascal's Triangle is as follows:
 Constraints:
 1 <= n <= 30
 All values will fit inside a 32-bit integer.
+
+//*Brute Approach
+/*
+vector<int> ans;
+for(i = 1 to r){
+    temp[];
+    for(j = 1 to i){
+        temp.add(nCr(i-1,j-1));
+    }
+    ans.add(temp);
+}
+//*T.C: O(N^3)
+
+
 */
 
 #include <bits/stdc++.h>

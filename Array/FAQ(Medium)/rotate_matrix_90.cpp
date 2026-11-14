@@ -1,43 +1,130 @@
+/*
+Given an N * N 2D integer matrix, rotate the matrix by 90 degrees clockwise.
+ 
+The rotation must be done in place, meaning the input 2D matrix must be modified directly.
+ 
+Example 1:
+Input: matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+ 
+Output: matrix = [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+ 
+Example 2:
+Input: matrix = [[0, 1, 1, 2], [2, 0, 3, 1], [4, 5, 0, 5], [5, 6, 7, 0]]
+ 
+Output: matrix = [[5, 4, 2, 0], [6, 5, 0, 1], [7, 0, 3, 1], [0, 5, 1, 2]]
+*/
+
+//*Brute Force
+// #include <bits/stdc++.h>
+// using namespace std;
+// class Solution
+// {
+// public:
+//     void rotateMatrix(vector<vector<int>> &matrix)
+//     {
+//         int n=matrix.size();
+
+//         vector<vector<int>> rotated(n,vector<int>(n,0));
+
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<n;j++){
+//                 rotated[j][n-i-1]=matrix[i][j];
+
+//             }
+//         }
+
+//         for(int i=0;i<rotated.size();i++){
+//            for(int j=0;j<rotated.size();j++){
+//             matrix[i][j]=rotated[i][j];
+
+        
+//            }
+//         }
+
+//     } 
+// };
+// int main()
+// {
+//     int n;
+//     cin>>n;
+//     vector<vector<int>> matrix(n,vector<int>(n,0));
+
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<n;j++){
+//             cin>>matrix[i][j];
+//         }
+//     }
+
+//     Solution s;
+//     s.rotateMatrix(matrix);
+
+
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<n;j++){
+//             cout<<matrix[i][j]<<" ";
+//         }
+//         cout<<"\n";
+//     }
+
+    
+
+//     return 0;
+// }
+
+//*T.C:O(n^2)+O(n^2)=O(n^2)
+//*S.C:O(n^2)=>Display, O(1)=>Solving
+
+//--------------------------X------------------------
+
+//*Optimal
 #include <bits/stdc++.h>
 using namespace std;
 class Solution
 {
 public:
-    vector<int> rotateMatrix(vector<vector<int>> &matrix)
+    void rotateMatrix(vector<vector<int>> &matrix)
     {
-        int n = matrix.size();
-        
-        vector<int> ans;
-        vector<int> rans(n*n);
+        int n=matrix.size();
 
-        for (auto &row : matrix)
-            ans.insert(ans.end(), row.begin(), row.end());
-        int x = 0;
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 1; j <= n; j++)
-            {
-                x = n * n - (n - i) * j;
-                rans.push_back(x);
+        for(int i=0;i<n;i++){
+            for(int j=0;j<i;j++){
+                swap(matrix[i][j],matrix[j][i]);
+
             }
         }
-        return rans;
-    }
+
+        for(int i=0;i<n;i++){
+           reverse(matrix[i].begin(),matrix[i].end());
+        }
+
+    } 
 };
 int main()
 {
-    vector<vector<int>> matrix = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
+    int n;
+    cin>>n;
+    vector<vector<int>> matrix(n,vector<int>(n,0));
 
-    Solution obj;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>matrix[i][j];
+        }
+    }
 
-    vector<int> result = obj.rotateMatrix(matrix);
+    Solution s;
+    s.rotateMatrix(matrix);
 
-    for (int x : result)
-        cout << x << " ";
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cout<<matrix[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+
+    
 
     return 0;
 }
+//*T.C:O(n^2)+O(n^2)=O(n^2)
+//*S.C:O(1)

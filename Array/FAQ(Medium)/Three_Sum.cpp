@@ -1,6 +1,4 @@
 /*
-3 Sum
-
 Given an integer array nums. Return all triplets such that:
 
 i != j, i != k, and j != k
@@ -32,119 +30,155 @@ nums[1] + nums[2] + nums[0] = 0
 Note that we have used two -1s as they are separate elements with different indexes
 
 But we have not used the -1 at index 4 as that would create a duplicate triplet
-
-
-Constraints:
-1 <= nums.length <= 3000
--104 <= nums[i] <= 104
 */
 
-//*Brute Force
-// #include <bits/stdc++.h>
-// using namespace std;
-// class Solution{
-//     public:
-//         vector<vector<int>> threeSum(vector<int>& nums){
-//             set<vector<int>> tripletSet;
-//             int n=nums.size();
-//             for(int i=0;i<n-2;i++){
-//                 for(int j=i+1;j<n-1;j++){
-//                     for(int k=j+1;k<n;k++){
-//                         if(nums[i]+nums[j]+nums[k]==0){
-//                             vector<int> temp={nums[i],nums[j],nums[k]};
-                            
-//                             sort(temp.begin(),temp.end());
-//                             tripletSet.insert(temp);
-//                         }
+#include <bits/stdc++.h>
+using namespace std;
+
+//*Brute
+// class Solution
+// {
+// public:
+//     vector<vector<int>> threeSum(vector<int> &nums)
+//     {
+//         set<vector<int>> tripleSet;
+
+//         int n = nums.size();
+//         for (int i = 0; i < n - 2; i++)
+//         {
+//             for (int j = i + 1; j < n - 1; j++)
+//             {
+//                 for (int k = j + 1; k < n; k++)
+//                 {
+//                     if (nums[i] + nums[j] + nums[k] == 0)
+//                     {
+//                         vector<int> temp = {nums[i], nums[j], nums[k]};
+
+//                         sort(temp.begin(), temp.end());
+
+//                         tripleSet.insert(temp);
 //                     }
-
-
 //                 }
 //             }
-//             vector<vector<int>> ans(tripletSet.begin(),tripletSet.end());
-
-//             return ans;
 //         }
+
+//         vector<vector<int>> ans(tripleSet.begin(), tripleSet.end());
+
+//         return ans;
+//     }
 // };
+//*T.C: Time Complexity: O(N3 x log(no. of unique triplets)) [log => because of set]
+// where N is size of the array. Using 3 nested loops & inserting triplets into the set takes O(log(no. of unique triplets)) time complexity. But we are not considering the time complexity of sorting as we are just sorting 3 elements every time.
 
-// int main(){
-//     vector<int> vec;
-//     int x;
-//     while(cin>>x){
-//         vec.push_back(x);
-//     }
-
-//     Solution s;
-//     vector<vector<int>> ans=s.threeSum(vec);
-
-//     for(auto& triplet:ans){
-//         cout<<"[";
-//         for(auto& num:triplet){
-//             cout<<num<<" ";
-//         }
-//         cout<<"] ";
-//     }
-//     cout<<"\n";
-
-//     return 0;
-// }
-//*T.C:O(n^3* log(no. of unique triplets))+O(log(3))=>log(no. of unique triplets) is for set insertion 
-//*S.C:O(2 x no. of the unique triplets) for using a set data structure and a list to store the triplets.
-
-//---------------------------X--------------------------------
+//*S.C:  O(2 x no. of the unique triplets)
+// temp is not counted as its scope is only limited inside loop
 
 //*Better
-// #include <bits/stdc++.h>
-// using namespace std;
 // class Solution{
 //     public:
 //         vector<vector<int>> threeSum(vector<int>& nums){
-//             set<vector<int>> tripletSet;
-//             int n=nums.size();
-//             for(int i=0;i<n;i++){
-//                 set<int> hashset;
-//                 for(int j=i+1;j<n;j++){
-//                     int third=-(nums[i]+nums[j]);
-//                     if(hashset.find(third)!=hashset.end()){
-//                         vector<int> temp={nums[i],nums[j],third};
+//             set<vector<int>> tripleSet;
 
+//             int n = nums.size();
+
+//             for(int i=0; i<n; i++){
+//                 set<int> hashSet;
+//                 for(int j=i+1; j<n; j++){
+//                     int third = -(nums[i] + nums[j]);
+
+//                     if(hashSet.find(third) != hashSet.end()){
+//                         vector<int> temp = {nums[i], nums[j], third};
 //                         sort(temp.begin(),temp.end());
-//                         tripletSet.insert(temp);
+//                         tripleSet.insert(temp);
 //                     }
 
-//                     hashset.insert(nums[j]);
-
-
+//                     hashSet.insert(nums[j]);
 //                 }
-//             }
-//             vector<vector<int>> ans(tripletSet.begin(),tripletSet.end());
 
+//             }
+
+//             vector<vector<int>> ans(tripleSet.begin(),tripleSet.end());
 //             return ans;
+
+
 //         }
 // };
+//*T.C: O(N2 x log(no. of unique triplets))
+// Inserting triplets into the set takes O(log(no. of unique triplets)) time complexity.
 
-// int main(){
-//     vector<int> vec;
-//     int x;
-//     while(cin>>x){
-//         vec.push_back(x);
-//     }
+//*S.C: O(2 x no. of the unique triplets) + O(N)
+//O(N) for hashSet, temp is not considered as it is fixed for 3
 
-//     Solution s;
-//     vector<vector<int>> ans=s.threeSum(vec);
+//*Optimal
+class Solution{
+    public:
+        vector<vector<int>> threeSum(vector<int>& nums){
 
-//     for(auto& triplet:ans){
-//         cout<<"[";
-//         for(auto& num:triplet){
-//             cout<<num<<" ";
-//         }
-//         cout<<"] ";
-//     }
-//     cout<<"\n";
+            vector<vector<int>> ans;
+            int n=nums.size();
+            sort(nums.begin(),nums.end());
 
-//     return 0;
-// }
-//*T.C:O(n^2* log(no. of unique triplets))+O(log(3))=>log(no. of unique triplets) is for set insertion 
-//*S.C:O(2 x no. of the unique triplets) +O(n) for using a set data structure and a list to store the triplets and extra O(N) for storing the array elements in another set.
+            for(int i=0;i<n;i++){
+                if(i>0 && nums[i-1]==nums[i]){
+                    continue;
+                }
 
-//---------------------------X--------------------------------
+                int j=i+1;
+                int k=n-1;
+
+                while(j<k){
+                    int sum=nums[i]+nums[j]+nums[k];
+
+                    if(sum<0){
+                        j++;
+                    }
+                    else if(sum>0){
+                        k--;
+                    }
+                    else{
+                        vector<int> temp={nums[i],nums[j],nums[k]};
+                        ans.push_back(temp);
+
+                        j++;
+                        k--;
+                        while(j<k && nums[j]==nums[j-1]) j++;
+                        while(j<k && nums[k]==nums[k+1]) k--;
+
+                    }
+                }
+            }
+
+            return ans;
+
+            
+
+
+        }
+};
+//*T.C:O(nlogn)+O(n^2)
+//*S.C:O(1) [But O(n) for display]
+
+int main()
+{
+    vector<int> nums;
+    int x;
+    while (cin >> x)
+    {
+        nums.push_back(x);
+    }
+    Solution sol;
+    vector<vector<int>> ans = sol.threeSum(nums);
+
+    for (auto &triplet : ans)
+    {
+        cout << "[";
+        for (auto &num : triplet)
+        {
+            cout << num << " ";
+        }
+        cout << "] ";
+    }
+    cout << endl;
+
+    return 0;
+}

@@ -32,56 +32,128 @@ Explanation:
 [3,2,1] is the last permutation. So we return the first: [1,2,3].
 */
 //*Brute Force
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution{
+//     public:
+//         void nextPermutation(vector<int>& nums){
+//             vector<vector<int>> ans=getAllPermutation(nums);
+
+//             int index=-1;
+
+//             for(int i=0;i<ans.size();i++){
+//                 if(nums==ans[i]){
+//                     index=i;
+//                     break;
+//                 }
+//             }
+
+//             if(index==ans.size()-1) nums=ans[0];
+//             else{
+//                 nums=ans[index+1];
+//             }
+
+//             return;
+            
+//         }
+    
+//     private:
+//         vector<vector<int>> getAllPermutation(vector<int> &nums){
+//             vector<vector<int>> ans;
+
+//             helperFunc(0,nums,ans);
+
+//             return ans;
+//         }
+
+//         void helperFunc(int ind, vector<int> &nums, vector<vector<int>> &ans){
+//             if(ind==nums.size()){
+//                 ans.push_back(nums);
+//                 return;
+//             }
+
+//             for(int i=ind;i<nums.size();i++){
+//                 swap(nums[ind],nums[i]);
+//                 helperFunc(ind+1,nums,ans);
+//                 swap(nums[ind],nums[i]);
+//             }
+
+//             return;
+
+//         }
+// };
+// int main(){
+//     vector<int> nums;
+//     int x;
+//     while(cin >> x){
+//         nums.push_back(x);
+//     }
+//     Solution sol;
+//     sol.nextPermutation(nums);
+//     for(int x : nums) cout << x << " ";
+//     return 0;
+// }
+//*T.C: O(n*n!*log(n!))
+//*S.C: O(n*n!)
+
+//------------------------------X------------------------------------
+//*STL
+// #include <bits/stdc++.h>
+// using namespace std; 
+// class Solution{
+//     public: 
+//         vector<int> nextPermutation(vector<int>& nums ){
+//             next_permutation(nums.begin(),nums.end());
+//             return nums;
+//         }
+// };
+// int main(){
+//     vector<int> nums;
+//     int x;
+//     while(cin >> x){
+//         nums.push_back(x);
+//     }
+//     Solution sol;
+//     sol.nextPermutation(nums);
+//     for(int x : nums) cout << x << " ";
+//     return 0;
+// }
+
+
+//------------------------------X------------------------------------
+
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution{
     public:
         void nextPermutation(vector<int>& nums){
-            vector<vector<int>> ans=getAllPermutation(nums);
-
-            int index=-1;
-
-            for(int i=0;i<ans.size();i++){
-                if(nums==ans[i]){
-                    index=i;
+            int n=nums.size();
+            int ind=-1;
+            for(int i=n-2;i>=0;i--){
+                if(nums[i]<nums[i+1]){
+                    ind=i;
                     break;
                 }
             }
 
-            if(index==ans.size()-1) nums=ans[0];
-            else{
-                nums=ans[index+1];
+            if(ind==-1){
+                reverse(nums.begin(),nums.end());
             }
 
+            for(int i=n-1;i>ind;i--){
+                if(nums[i]>nums[ind]){
+                    swap(nums[i],nums[ind]);
+                    break;
+                }
+            }
+
+            reverse(nums.begin()+ind+1,nums.end());
             return;
-            
-        }
-    
-    private:
-        vector<vector<int>> getAllPermutation(vector<int> &nums){
-            vector<vector<int>> ans;
-
-            helperFunc(0,nums,ans);
-
-            return ans;
         }
 
-        void helperFunc(int ind, vector<int> &nums, vector<vector<int>> &ans){
-            if(ind==nums.size()){
-                ans.push_back(nums);
-                return;
-            }
 
-            for(int i=ind;i<nums.size();i++){
-                swap(nums[ind],nums[i]);
-                helperFunc(ind+1,nums,ans);
-                swap(nums[ind],nums[i]);
-            }
-
-            return;
-
-        }
 };
 int main(){
     vector<int> nums;
@@ -94,5 +166,6 @@ int main(){
     for(int x : nums) cout << x << " ";
     return 0;
 }
-//*T.C: O(n)
-//*S.C: O(1)
+
+//*T.C:O(n)
+//*S.C:O(1)
